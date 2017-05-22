@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <%- include _common/head.ejs %>
+    <!--PAGE LEVELC STYLES-->
+    <link href="assets/css/invoice.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="wrapper">
+    <%- include _common/navbar.ejs %>
+    <div id="page-wrapper">
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-head-line">数据分析</h1>
+                    <h1 class="page-subhead-line">展示数据分析结果。</h1>
+
+                </div>
+            </div>
+            <!-- /. ROW  -->
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            图表控件空间
+                        </div>
+                        <div class="panel-body">
+                            <p>这里放置一些和图表相关按钮。</p>
+                        </div>
+                        <div class="panel-footer">
+                            以上
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /. ROW  -->
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            基础图表
+                        </div>
+                        <div class="panel-body">
+                            <p>基础图表留空</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /. ROW  -->
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            数据分析展示
+                        </div>
+                        <div class="panel-body">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#home" data-toggle="tab">逻辑回归</a>
+                                </li>
+                                <li class=""><a href="#profile" data-toggle="tab">朴素贝叶斯</a>
+                                </li>
+                                <li class=""><a href="#messages" data-toggle="tab">随机森林</a>
+                                </li>
+                                <li class=""><a href="#settings" data-toggle="tab">支持向量机</a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane fade active in" id="home">
+                                    <h4>回归算法</h4>
+                                    <p>123</p>
+                                </div>
+                                <div class="tab-pane fade" id="profile">
+                                    <h4>分类算法1</h4>
+                                    <p>1234</p>
+                                </div>
+                                <div class="tab-pane fade" id="messages">
+                                    <h4>分类算法2</h4>
+                                    <p>123123123</p>
+                                </div>
+                                <div class="tab-pane fade" id="settings">
+                                    <h4>分类算法3</h4>
+                                    <p>asdasd</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /. ROW  -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jumbotron">
+                        <h1>时序图</h1>
+                        <p>时序图留空</p>
+                        <p>
+                            <a class="btn btn-primary btn-lg" role="button">查看更多</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- /. ROW -->
+        </div>
+        <!-- /. PAGE INNER  -->
+    </div>
+    <!-- /. PAGE WRAPPER  -->
+</div>
+<%- include _common/foot.ejs %>
+</body>
+</html>

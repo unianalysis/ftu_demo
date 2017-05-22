@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <%- include _common/head.ejs %>
+    <!-- PAGE LEVEL STYLES -->
+    <link href="/assets/css/bootstrap-fileupload.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="wrapper">
+    <%- include _common/navbar.ejs %>
+    <div id="page-wrapper">
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-head-line">上传数据</h1>
+                    <h1 class="page-subhead-line">上传原始数据。</h1>
+                    <% if( uploaded) { %>
+                        <div class="alert alert-success">
+                            <strong>上传文件成功！</strong> 可以继续操作。
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+            <!-- /. ROW  -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <form role="form" name="form" method="post" action="/api/file/upload?_csrf=<%= ctx.csrf %>"
+                                  onsubmit="return paramCheck();" enctype="multipart/form-data">
+                                <!-- 文件项 -->
+                                <div class="form-group">
+                                    <label class="control-label">选择文件：</label>
+                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                    <span class="btn btn-file btn-default">
+                                        <span class="fileupload-new">选择文件</span>
+                                        <span class="fileupload-exists">更换文件</span>
+                                        <input type="file" name="uploaded_file" id="file">
+                                    </span>
+                                        <span class="fileupload-preview"></span>
+                                        <a href="#" class="close fileupload-exists" data-dismiss="fileupload"
+                                           style="float: none">×</a>
+                                    </div>
+                                </div>
+                                <!-- 文件类型 -->
+                                <div class="form-group">
+                                    <label class="control-label">文件类型</label>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="type" id="optionCsv" value="csv" checked="">CSV
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="type" id="optionJson" value="json">JSON
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="type" id="optionXml" value="xml">XML
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- 文件描述 -->
+                                <div class="form-group">
+                                    <label class="control-label">文件说明：</label>
+                                    <textarea class="form-control" rows="3" name="description"
+                                              id="description"></textarea>
+                                </div>
+                                <div class="alert alert-warning">
+                                    <strong>注意！</strong> 上传文件需严格按照指定格式存储数据，扩展名对应，否则无法进行下一步操作。
+                                </div>
+                                <button type="submit" class="btn btn-primary">上传</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /. ROW  -->
+        </div>
+        <!-- /. PAGE INNER  -->
+    </div>
+    <!-- /. PAGE WRAPPER  -->
+</div>
+<%- include _common/foot.ejs %>
+<!-- PAGE LEVEL SCRIPTS -->
+<script src="/assets/js/bootstrap-fileupload.js"></script>
+<script type="text/javascript">
+    function paramCheck() {
+        var file = document.getElementById('file').value;
+        var type = document.getElementsByName('type');
+        if (file == '') {
+            alert("请选择需要上传的文件！");
+            return false;
+        }
+        var arr = file.split('\\');
+        var name = arr[arr.length - 1];
+        if ((type.item(0).checked && !name.match(/\.(csv|CSV)$/i)) || (type.item(1).checked && !name.match(/\.(json|JSON)$/i)) || (type.item(2).checked && !name.match(/\.(xml|XML)$/i))) {
+            alert("文件类型错误！");
+            return false
+        }
+        return true;
+    }
+</script>
+</body>
+</html>

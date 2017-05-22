@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <%- include _common/head.ejs %>
+    <!--PAGE LEVELC STYLES-->
+    <link href="assets/css/invoice.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="wrapper">
+    <%- include _common/navbar.ejs %>
+    <div id="page-wrapper">
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-head-line">数据过滤（<%= menu %>） </h1>
+                </div>
+            </div>
+            <!-- /. ROW  -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-primary">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading"># 过滤条件</div>
+
+                        <!-- Table -->
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>#</th>
+                                <th>条件名称</th>
+                                <th>数值类型</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="list-group-item-success">
+                                <td>1</td>
+                                <td><input type="checkbox" value=""/></td>
+                                <td>数据列1</td>
+                                <td>整数</td>
+                                <td><a href="#" class="btn btn-primary ">选择范围</a></td>
+                            </tr>
+                            <tr class="list-group-item-danger">
+                                <td>2</td>
+                                <td><input type="checkbox" value=""/></td>
+                                <td>数据列2</td>
+                                <td>字符串</td>
+                                <td><a href="#" class="btn btn-success">设定值</a></td>
+                            </tr>
+                            <tr class="list-group-item-info">
+                                <td>3</td>
+                                <td><input type="checkbox" value=""/></td>
+                                <td>数据列3</td>
+                                <td>浮点数</td>
+                                <td><a href="#" class="btn btn-primary">选择范围</a></td>
+                            </tr>
+                            <tr class="list-group-item-warning">
+                                <td>4</td>
+                                <td><input type="checkbox" value=""/></td>
+                                <td>数据列4</td>
+                                <td>字符串</td>
+                                <td><a href="#" class="btn btn-danger">移除</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- /. ROW -->
+        </div>
+        <!-- /. PAGE INNER  -->
+    </div>
+    <!-- /. PAGE WRAPPER  -->
+</div>
+<%- include _common/foot.ejs %>
+</body>
+</html>

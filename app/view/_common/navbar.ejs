@@ -1,0 +1,33 @@
+<nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/">谱时昊唯</a>
+    </div>
+
+    <!--<div class="header-right">-->
+        <!--<a href="login.html" class="btn btn-danger" title="Logout"><i class="fa fa-exclamation-circle fa-2x"></i></a>-->
+    <!--</div>-->
+</nav>
+
+<!-- /. NAV TOP  -->
+<nav class="navbar-default navbar-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="main-menu">
+            <li>
+                <a <% if( menu.name === 'index') { %>class="active-menu"<% } %> href="/index"><i class="fa fa-dashboard "></i>首页</a>
+            </li>
+            <li>
+                <a <% if( menu.name === 'upload') { %>class="active-menu"<% } %> href="/upload"><i class="fa fa-flash "></i>上传数据</a>
+            </li>
+            <li>
+                <a <% if( menu.name === 'stats') { %>class="active-menu"<% } %> href="/stats"><i class="fa fa-anchor "></i>数据统计</a>
+            </li>
+            <li>
+                <a <% if( menu.name === 'filtration') { %>class="active-menu"<% } %> href="/filtration"><i class="fa fa-bug "></i>数据过滤</a>
+            </li>
+            <li>
+                <a <% if( menu.name === 'analysis') { %>class="active-menu"<% } %> href="/analysis"><i class="fa fa-sign-in "></i>数据分析</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- /. NAV SIDE  -->
